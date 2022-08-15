@@ -1,0 +1,1057 @@
+
+<html>
+	<head>
+		<title>SNN (Scott's News Network)</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<script src="http://s3.amazonaws.com/scripting.com/code/includes/jquery-1.9.1.min.js"></script>
+		<link href="http://s3.amazonaws.com/scripting.com/code/includes/bootstrap.css" rel="stylesheet">
+		<script src="http://s3.amazonaws.com/scripting.com/code/includes/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="http://s3.amazonaws.com/scripting.com/code/fontawesome/css/all.css">
+		<link href="http://fonts.googleapis.com/css?family=Ubuntu:400,500i,700" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Rancho" rel="stylesheet">
+		<script src="http://s3.amazonaws.com/scripting.com/code/includes/basic/code.js"></script>
+		<link href="http://s3.amazonaws.com/scripting.com/code/includes/basic/styles.css" rel="stylesheet" type="text/css">
+		
+		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+		<script src="http://s3.amazonaws.com/fargo.io/cms/dateFormat.js"></script>
+		<script src="http://scripting.com/code/river6/browsers/riverbrowser.js"></script>
+		<link rel="stylesheet" href="http://scripting.com/code/river6/browsers/styles.css"/>
+		<link rel="stylesheet" href="http://scripting.com/code/river6/templates/feedviewer/styles.css"/>
+		<script src="http://scripting.com/code/river6/templates/feedviewer/code.js"></script>
+		<script src="http://scripting.com/code/opmlpackage/client/opml.js"></script>
+		
+		<script src="http://scripting.com/code/feedland/home/api.js"></script>
+		<link href="http://scripting.com/code/feedland/home/oldschoolrender.css" rel="stylesheet" type="text/css">
+		<script src="http://scripting.com/code/feedland/home/oldschoolrender.js"></script>
+		<script src="http://scripting.com/code/feedland/home/getfeedinfo.js"></script>
+		<script src="http://scripting.com/code/feedland/home/riverviewer.js"></script>
+		<link href="http://scripting.com/code/feedland/home/riverviewer.css" rel="stylesheet" type="text/css">
+		
+		<script src="http://scripting.com/code/riverclient/code.js"></script>
+		<link href="http://scripting.com/code/riverclient/styles.css" rel="stylesheet" type="text/css">
+		
+		<script>
+			var appConsts = {
+				productname: "newsProduct",
+				productnameForDisplay: "NewsProduct",
+				version: "0.5.54",
+				urlTwitterServer: "http://product.scripting.com/",
+				urlSocketServer: "ws://product.scripting.com:1459/",
+				flEnableLogin: true,
+				flUseSockets: true,
+				urlTemplate: "http://drummer.scripting.com/ScottHansonDE/SMHNewsProducts.opml"
+				}
+			
+			var globalOutline = {
+    "opml": {
+        "head": {
+            "title": "SNN (Scott's News Network)",
+            "dateCreated": "Thu, 11 Aug 2022 10:06:31 GMT",
+            "flPublic": "true",
+            "urlPublic": "http://drummer.scripting.com/ScottHansonDE/SMHNewsProducts.opml",
+            "image": "https://fav.farm/🤷‍♂️",
+            "description": "All the news that's fit to feed",
+            "ownerTwitterScreenName": "ScottHansonDE",
+            "ownerName": "Scott Hanson",
+            "ownerId": "http://twitter.com/ScottHansonDE",
+            "urlUpdateSocket": "ws://drummer.scripting.com:1232/",
+            "dateModified": "Fri, 12 Aug 2022 10:10:54 GMT",
+            "expansionState": "2,5",
+            "lastCursor": "3",
+            "generator": "opmlPackage v0.4.24"
+        },
+        "body": {
+            "subs": [
+                {
+                    "text": "tabs",
+                    "created": "Tue, 09 Aug 2022 14:45:16 GMT",
+                    "subs": [
+                        {
+                            "text": "Bloggers",
+                            "created": "Mon, 08 Aug 2022 16:08:14 GMT",
+                            "subs": [
+                                {
+                                    "text": "Jon Udell",
+                                    "type": "rss",
+                                    "xmlUrl": "http://blog.jonudell.net/feed",
+                                    "htmlUrl": "https://blog.jonudell.net/",
+                                    "created": "Mon, 08 Aug 2022 16:08:19 GMT"
+                                },
+                                {
+                                    "text": "inessential.com",
+                                    "type": "rss",
+                                    "xmlUrl": "http://inessential.com/xml/rss.xml",
+                                    "htmlUrl": "https://inessential.com/",
+                                    "created": "Mon, 08 Aug 2022 16:08:25 GMT"
+                                },
+                                {
+                                    "text": "Joel on Software",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.joelonsoftware.com/rss.xml",
+                                    "htmlUrl": "https://www.joelonsoftware.com/",
+                                    "created": "Mon, 08 Aug 2022 16:08:28 GMT"
+                                },
+                                {
+                                    "text": "Marco.org",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.marco.org/rss",
+                                    "htmlUrl": "https://marco.org/",
+                                    "created": "Mon, 08 Aug 2022 16:08:29 GMT"
+                                },
+                                {
+                                    "text": "Coding Horror",
+                                    "type": "rss",
+                                    "xmlUrl": "http://feeds.feedburner.com/codinghorror",
+                                    "htmlUrl": "https://blog.codinghorror.com/",
+                                    "created": "Mon, 08 Aug 2022 16:08:30 GMT"
+                                },
+                                {
+                                    "text": "Ken Smith's linkblog",
+                                    "type": "rss",
+                                    "xmlUrl": "http://radio3.io/users/KenSmith/rss.xml",
+                                    "htmlUrl": "http://oldschool.scripting.com/KenSmith/",
+                                    "created": "Mon, 08 Aug 2022 16:09:00 GMT"
+                                },
+                                {
+                                    "text": "Blog - Ethan Zuckerman",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.ethanzuckerman.com/blog/?feed=rss2",
+                                    "htmlUrl": "https://ethanzuckerman.com/blog/",
+                                    "created": "Mon, 08 Aug 2022 16:09:10 GMT"
+                                },
+                                {
+                                    "text": "Hot Takes",
+                                    "type": "rss",
+                                    "xmlUrl": "https://adamsinger.substack.com/feed",
+                                    "htmlUrl": "https://adamsinger.substack.com/",
+                                    "created": "Mon, 08 Aug 2022 16:10:41 GMT"
+                                },
+                                {
+                                    "text": "xkcd.com",
+                                    "type": "rss",
+                                    "xmlUrl": "http://xkcd.com/rss.xml",
+                                    "htmlUrl": "https://xkcd.com/",
+                                    "created": "Mon, 08 Aug 2022 16:08:41 GMT"
+                                },
+                                {
+                                    "text": "Open Thinkering",
+                                    "type": "rss",
+                                    "xmlUrl": "https://dougbelshaw.com/blog/feed",
+                                    "htmlUrl": "https://dougbelshaw.com/blog",
+                                    "created": "Mon, 08 Aug 2022 16:10:57 GMT"
+                                },
+                                {
+                                    "text": "davewiner tweets",
+                                    "type": "rss",
+                                    "xmlUrl": "http://data.feedland.org/twitterfeeds/davewiner/rss.xml",
+                                    "htmlUrl": "http://twitter.com/davewiner",
+                                    "created": "Mon, 08 Aug 2022 16:11:26 GMT",
+                                    "subs": [
+                                        {
+                                            "text": "<p>Trump is boring. <a href=\"https://t.co/QCVS62ImM3\">https://t.co/QCVS62ImM3</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557507292496596992"
+                                        },
+                                        {
+                                            "text": "<p>1/3 The idea of putting RSS into the world of the browser was a mistake. The world of news is another world altogether. The web tried, in every way to turn RSS into the web. And it was very unsatisfying for a reason, the web was designed for documents. Things that have lasting</p> <p>2/3 value. The news is different. It&#39;s ephemeral. You want to keep a record of it for sure, but yesterday&#39;s news has no value as news, because it&#39;s not new. It&#39;s like the difference between music and podcasts. Music you may want to listen to many times, to cherish, to attach</p> <p>3/3 memories to, if it&#39;s good enough, over your whole life. A podcast is one and done. Pfffft. Off to the bit bucket. It&#39;s value is over as soon as the next episode is out.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557478562067877890"
+                                        },
+                                        {
+                                            "text": "<p>Schmucks all of them. <a href=\"https://t.co/WxFeIGe4uR\">https://t.co/WxFeIGe4uR</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557469458846961666"
+                                        },
+                                        {
+                                            "text": "<p>I forgot the Mets are playing a day game. Oh it&#39;s the 8th inning, Mets up 10-2.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557456290301071360"
+                                        },
+                                        {
+                                            "text": "<p>Ralph Nader urges regulators to recall Tesla’s ‘manslaughtering’ Full Self-Driving vehicles. <a href=\"https://t.co/XSjfi76v65\">https://t.co/XSjfi76v65</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557418148428713984"
+                                        },
+                                        {
+                                            "text": "<p>the news we get isn&#39;t any better than the news the fox watchers get. <a href=\"https://t.co/LBXUlrmM25\">https://t.co/LBXUlrmM25</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557416194868748288"
+                                        },
+                                        {
+                                            "text": "<p>@WichitaCindy i&#39;m using it on my android phone. very nice! ;-)</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557415301926555648"
+                                        },
+                                        {
+                                            "text": "<p>Interop is the Hippocratic Oath for developers.</p> <p>&quot;First do no lock-in.&quot;</p> <p>Whenever possible make your product interop with products that came before.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557367431496192006"
+                                        },
+                                        {
+                                            "text": "<p>@Tallow_beach @howardlindzon @MylesUdland I don&#39;t think there&#39;s much of a debate here.</p> <p>The companies that the visionary here predicts will do transformative things could do those things now, without the supposedly enabling tech, but they don&#39;t for the reasons big companies generally don&#39;t do transformative things.</p> <p>@Tallow_beach @howardlindzon @MylesUdland I know about this from <em>decades</em> of experience trying to get big companies to do transformative things, or to try to work around big companies trying to stop transformative things from happening.</p> <p>@Tallow_beach @howardlindzon @MylesUdland If you want to do something great -- then fucking do it and stop talking about how. it doesn&#39;t matter. that&#39;s not the hard part.</p> <p>@Tallow_beach @howardlindzon @MylesUdland ps: the hard part btw is to get people to work together.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557364223524720643"
+                                        },
+                                        {
+                                            "text": "<p>@howardlindzon @Tallow_beach interop was in your friend&#39;s list of benefits of &quot;web 3.&quot;</p> <p>the features your friend is pushing are plain old garden variety bullshit.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557361386501677063"
+                                        },
+                                        {
+                                            "text": "<p>@Tallow_beach @howardlindzon also &quot;web 3&quot; didn&#39;t invent interop.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557358568910757889"
+                                        },
+                                        {
+                                            "text": "<p>Health providers are fighting to protect abortion records as bans expand. <a href=\"https://t.co/LOwTVmEIfe\">https://t.co/LOwTVmEIfe</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557342530081103873"
+                                        },
+                                        {
+                                            "text": "<p>I click a link in Twitter, a rare event, because I was interested and momentarily forgot that, about four paragraphs in, just as they’re getting to the substance, the text fades, and I see I have to subscribe. I try to remember never to click an ESPN link again.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557326063491072000"
+                                        },
+                                        {
+                                            "text": "<p>How TikTok Live Became ‘A Strip Club Filled With 15-Year-Olds’. <a href=\"https://t.co/3lNXpoJqzM\">https://t.co/3lNXpoJqzM</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557314938649157632"
+                                        },
+                                        {
+                                            "text": "<p>@Ask_Spectrum The service is still out.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557238255225126912"
+                                        },
+                                        {
+                                            "text": "<p>@Ask_Spectrum I hate it when big companies assume it’s just an inconvenience when you can’t watch the news and can’t watch a baseball game after a long days work. Your product doesn’t work. More than inconvenience.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557176104850440193"
+                                        },
+                                        {
+                                            "text": "<p>Repealing pitch. I’d love to get credit for my contributions. But I don’t know if this is for real. <a href=\"https://t.co/1MOpWX4C4n\">https://t.co/1MOpWX4C4n</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557175856996524032"
+                                        },
+                                        {
+                                            "text": "<p><a href=\"https://t.co/9DEbQ1CObw\">https://t.co/9DEbQ1CObw</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557167057879318528"
+                                        },
+                                        {
+                                            "text": "<p>Spectrum is taking a vacation tonight. No baseball or news. I guess no news is good news eh? I bet the Mets win even if I can’t supervise. Didn’t like missing Jeopardy.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557166719839387649"
+                                        },
+                                        {
+                                            "text": "<p>@Ask_Spectrum — is there a service outage in ulster county, ny?</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557146385786572800"
+                                        },
+                                        {
+                                            "text": "<p>@dsearls whodat?</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557125768769069056"
+                                        },
+                                        {
+                                            "text": "<p>What Is Really Unprecedented Is Trump’s Criminality. <a href=\"https://t.co/kqtUgWq7nu\">https://t.co/kqtUgWq7nu</a></p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557066601685553155"
+                                        },
+                                        {
+                                            "text": "<p>@tribelaw &quot;they&quot; can force you to have a child you don&#39;t want.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557032425024258050"
+                                        },
+                                        {
+                                            "text": "<p>@apollozac they can have him!</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557029177324457987"
+                                        },
+                                        {
+                                            "text": "<p>Listen up schmucks.</p> <p>See this picture of Trump and his buddies from Russia.</p> <p>That&#39;s who he is.</p> <p>You sure you want that guy to have American secrets in his hotel safe? <a href=\"https://t.co/hHLpNuTrW4\">https://t.co/hHLpNuTrW4</a></p> <p>Oh one more thing.</p> <p>Before you feel any sympathy for the schmuck in the middle, he&#39;s the one that appointed the Supreme Court justices that overturned Roe v Wade.</p> <p>So if you like him, you&#39;re supporting the enslavement of human broodmares aka women.</p> <p>Also I almost forgot -- over 1 million Americans are dead because he botched the response to Covid.</p> ",
+                                            "type": "link",
+                                            "url": "https://twitter.com/davewiner/status/1557029095837507585"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "text": "cluelessnewbie tweets",
+                                    "type": "rss",
+                                    "xmlUrl": "http://data.feedland.org/twitterfeeds/cluelessnewbie/rss.xml",
+                                    "htmlUrl": "http://twitter.com/cluelessnewbie",
+                                    "created": "Mon, 08 Aug 2022 16:11:31 GMT"
+                                },
+                                {
+                                    "text": "Uncle Davey's silliness!",
+                                    "type": "rss",
+                                    "xmlUrl": "http://scripting.com/userfeeds/davewiner.xml",
+                                    "created": "Mon, 08 Aug 2022 16:11:43 GMT"
+                                },
+                                {
+                                    "text": "Memex 1.1",
+                                    "type": "rss",
+                                    "xmlUrl": "http://memex.naughtons.org/feed",
+                                    "htmlUrl": "https://memex.naughtons.org/",
+                                    "created": "Mon, 08 Aug 2022 16:12:16 GMT"
+                                },
+                                {
+                                    "text": "Letters from an American",
+                                    "type": "rss",
+                                    "xmlUrl": "https://heathercoxrichardson.substack.com/feed",
+                                    "htmlUrl": "https://heathercoxrichardson.substack.com/",
+                                    "created": "Mon, 08 Aug 2022 16:12:19 GMT"
+                                },
+                                {
+                                    "text": "Dave's Radio3 linkblog",
+                                    "type": "rss",
+                                    "xmlUrl": "http://radio3.io/users/davewiner/rss.xml",
+                                    "htmlUrl": "https://t.co/alwLFPBgDF",
+                                    "created": "Mon, 08 Aug 2022 16:12:24 GMT"
+                                },
+                                {
+                                    "text": "Daring Fireball",
+                                    "type": "rss",
+                                    "xmlUrl": "https://daringfireball.net/feeds/main",
+                                    "htmlUrl": "https://daringfireball.net/",
+                                    "created": "Mon, 08 Aug 2022 16:12:25 GMT"
+                                },
+                                {
+                                    "text": "aka Ken Smith",
+                                    "type": "rss",
+                                    "xmlUrl": "http://oldschool.scripting.com/KenSmith/rss.xml",
+                                    "htmlUrl": "http://oldschool.scripting.com/KenSmith/",
+                                    "created": "Mon, 08 Aug 2022 16:12:26 GMT"
+                                },
+                                {
+                                    "text": "Yumi stap storian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://storian.org/rss.xml",
+                                    "htmlUrl": "http://storian.org/",
+                                    "created": "Mon, 08 Aug 2022 16:13:26 GMT"
+                                },
+                                {
+                                    "text": "Scripting News",
+                                    "type": "rss",
+                                    "xmlUrl": "http://scripting.com/rss.xml",
+                                    "htmlUrl": "http://scripting.com/",
+                                    "created": "Mon, 08 Aug 2022 16:10:03 GMT"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "NYT",
+                            "created": "Mon, 08 Aug 2022 16:03:57 GMT",
+                            "subs": [
+                                {
+                                    "text": "NYT > Arts",
+                                    "htmlUrl": "https://www.nytimes.com/section/arts",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml",
+                                    "created": "Tue, 02 Aug 2022 20:42:53 GMT"
+                                },
+                                {
+                                    "text": "NYT > Books",
+                                    "htmlUrl": "https://www.nytimes.com/section/books",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Books.xml",
+                                    "created": "Tue, 02 Aug 2022 20:42:54 GMT"
+                                },
+                                {
+                                    "text": "NYT > Business",
+                                    "htmlUrl": "https://www.nytimes.com/section/business",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+                                    "created": "Tue, 02 Aug 2022 20:42:56 GMT"
+                                },
+                                {
+                                    "text": "NYT > Climate and Environment",
+                                    "htmlUrl": "https://www.nytimes.com/section/climate",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Climate.xml",
+                                    "created": "Tue, 02 Aug 2022 20:42:57 GMT"
+                                },
+                                {
+                                    "text": "NYT > Food",
+                                    "htmlUrl": "https://www.nytimes.com/section/food",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/DiningandWine.xml",
+                                    "created": "Tue, 02 Aug 2022 20:42:58 GMT"
+                                },
+                                {
+                                    "text": "NYT > Style",
+                                    "htmlUrl": "https://www.nytimes.com/ca/section/style",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/FashionandStyle.xml",
+                                    "created": "Tue, 02 Aug 2022 20:42:59 GMT"
+                                },
+                                {
+                                    "text": "NYT > Lens",
+                                    "htmlUrl": "https://www.nytimes.com/section/lens",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Lens.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:01 GMT"
+                                },
+                                {
+                                    "text": "NYT > Obituaries",
+                                    "htmlUrl": "https://www.nytimes.com/section/obituaries",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Obituaries.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:01 GMT"
+                                },
+                                {
+                                    "text": "NYT > Sports > N.F.L.",
+                                    "htmlUrl": "https://www.nytimes.com/section/sports/football",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/ProFootball.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:02 GMT"
+                                },
+                                {
+                                    "text": "NYT > Real Estate",
+                                    "htmlUrl": "https://www.nytimes.com/section/realestate",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/RealEstate.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:03 GMT"
+                                },
+                                {
+                                    "text": "NYT > Science",
+                                    "htmlUrl": "https://www.nytimes.com/section/science",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:04 GMT"
+                                },
+                                {
+                                    "text": "NYT > Technology",
+                                    "htmlUrl": "https://www.nytimes.com/section/technology",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
+                                    "created": "Thu, 07 Jul 2022 16:42:31 GMT"
+                                },
+                                {
+                                    "text": "NYT > Sports > Tennis",
+                                    "htmlUrl": "https://www.nytimes.com/section/sports/tennis",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Tennis.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:05 GMT"
+                                },
+                                {
+                                    "text": "NYT > Well",
+                                    "htmlUrl": "https://www.nytimes.com/section/well",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Well.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:08 GMT"
+                                },
+                                {
+                                    "text": "NYT > World News",
+                                    "htmlUrl": "https://www.nytimes.com/section/world",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+                                    "created": "Thu, 07 Jul 2022 16:42:36 GMT"
+                                },
+                                {
+                                    "text": "NYT > Health",
+                                    "htmlUrl": "https://www.nytimes.com/section/health",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.nytimes.com/services/xml/rss/nyt/Health.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:10 GMT"
+                                },
+                                {
+                                    "text": "NYT > Travel",
+                                    "htmlUrl": "https://www.nytimes.com/section/travel",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.nytimes.com/services/xml/rss/nyt/Travel.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:11 GMT"
+                                },
+                                {
+                                    "text": "NYT > Fashion > Love",
+                                    "htmlUrl": "https://www.nytimes.com/section/fashion/weddings",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.nytimes.com/services/xml/rss/nyt/Weddings.xml",
+                                    "created": "Tue, 02 Aug 2022 20:43:12 GMT"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Guardian",
+                            "created": "Mon, 08 Aug 2022 16:07:34 GMT",
+                            "subs": [
+                                {
+                                    "text": "Food | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/lifeandstyle/food-and-drink/rss",
+                                    "htmlUrl": "https://www.theguardian.com/food",
+                                    "created": "Mon, 08 Aug 2022 16:07:45 GMT"
+                                },
+                                {
+                                    "text": "Climate crisis | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/environment/climate-change/rss",
+                                    "htmlUrl": "https://www.theguardian.com/environment/climate-crisis"
+                                },
+                                {
+                                    "text": "TV and radio  | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/tv-and-radio/rss",
+                                    "htmlUrl": "https://www.theguardian.com/uk/tv-and-radio"
+                                },
+                                {
+                                    "text": "Global development | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/global-development/rss",
+                                    "htmlUrl": "https://www.theguardian.com/global-development"
+                                },
+                                {
+                                    "text": "Americas | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/world/americas/rss",
+                                    "htmlUrl": "https://www.theguardian.com/world/americas"
+                                },
+                                {
+                                    "text": "Skiing holidays | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/travel/skiing/rss",
+                                    "htmlUrl": "https://www.theguardian.com/travel/skiing"
+                                },
+                                {
+                                    "text": "Cities | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/cities/rss",
+                                    "htmlUrl": "https://www.theguardian.com/cities"
+                                },
+                                {
+                                    "text": "US small business | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/business/series/us-small-business/rss",
+                                    "htmlUrl": "https://www.theguardian.com/business/us-small-business"
+                                },
+                                {
+                                    "text": "Pollution | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/environment/pollution/rss",
+                                    "htmlUrl": "https://www.theguardian.com/environment/pollution"
+                                },
+                                {
+                                    "text": "Crossword blog | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/crossword-blog/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/crossword-blog"
+                                },
+                                {
+                                    "text": "Europe holidays | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/travel/europe/rss",
+                                    "htmlUrl": "https://www.theguardian.com/travel/europe",
+                                    "created": "Mon, 08 Aug 2022 16:07:48 GMT"
+                                },
+                                {
+                                    "text": "United States holidays | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/travel/usa/rss",
+                                    "htmlUrl": "https://www.theguardian.com/travel/usa"
+                                },
+                                {
+                                    "text": "Classical music | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/music/classicalmusicandopera/rss",
+                                    "htmlUrl": "https://www.theguardian.com/music/classical-music-and-opera"
+                                },
+                                {
+                                    "text": "Film | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/us/film/rss",
+                                    "htmlUrl": "https://www.theguardian.com/us/film"
+                                },
+                                {
+                                    "text": "Africa | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/world/africa/rss",
+                                    "htmlUrl": "https://www.theguardian.com/world/africa"
+                                },
+                                {
+                                    "text": "Sustainable business | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/us/sustainable-business/rss",
+                                    "htmlUrl": "https://www.theguardian.com/uk/sustainable-business"
+                                },
+                                {
+                                    "text": "Art and design | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/artanddesign/rss",
+                                    "htmlUrl": "https://www.theguardian.com/artanddesign"
+                                },
+                                {
+                                    "text": "Crossword editor's update | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/crossword-editor-update/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/crossword-editor-update"
+                                },
+                                {
+                                    "text": "Books | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/books/rss",
+                                    "htmlUrl": "https://www.theguardian.com/books"
+                                },
+                                {
+                                    "text": "Family | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/lifeandstyle/family/rss",
+                                    "htmlUrl": "https://www.theguardian.com/lifeandstyle/family"
+                                },
+                                {
+                                    "text": "United Kingdom holidays | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/travel/uk/rss",
+                                    "htmlUrl": "https://www.theguardian.com/travel/uk"
+                                },
+                                {
+                                    "text": "Health & wellbeing | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/lifeandstyle/health-and-wellbeing/rss",
+                                    "htmlUrl": "https://www.theguardian.com/lifeandstyle/health-and-wellbeing"
+                                },
+                                {
+                                    "text": "NBA | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/sport/nba/rss",
+                                    "htmlUrl": "https://www.theguardian.com/sport/nba"
+                                },
+                                {
+                                    "text": "Home And Garden | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/lifeandstyle/home-and-garden/rss",
+                                    "htmlUrl": "https://www.theguardian.com/lifeandstyle/home-and-garden"
+                                },
+                                {
+                                    "text": "Music | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/music/rss",
+                                    "htmlUrl": "https://www.theguardian.com/music"
+                                },
+                                {
+                                    "text": "Stage | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/stage/rss",
+                                    "htmlUrl": "https://www.theguardian.com/stage"
+                                },
+                                {
+                                    "text": "MLB | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/sport/mlb/rss",
+                                    "htmlUrl": "https://www.theguardian.com/sport/mlb"
+                                },
+                                {
+                                    "text": "NHL | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/sport/nhl/rss",
+                                    "htmlUrl": "https://www.theguardian.com/sport/nhl"
+                                },
+                                {
+                                    "text": "Wildlife | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/environment/wildlife/rss",
+                                    "htmlUrl": "https://www.theguardian.com/environment/wildlife"
+                                },
+                                {
+                                    "text": "Genius | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/genius/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/genius"
+                                },
+                                {
+                                    "text": "Economics | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/business/economics/rss",
+                                    "htmlUrl": "https://www.theguardian.com/business/economics"
+                                },
+                                {
+                                    "text": "Football | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/football/rss",
+                                    "htmlUrl": "https://www.theguardian.com/football"
+                                },
+                                {
+                                    "text": "Europe | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/world/europe-news/rss",
+                                    "htmlUrl": "https://www.theguardian.com/world/europe-news"
+                                },
+                                {
+                                    "text": "Azed | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/azed/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/azed"
+                                },
+                                {
+                                    "text": "Games | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/technology/games/rss",
+                                    "htmlUrl": "https://www.theguardian.com/games"
+                                },
+                                {
+                                    "text": "Diversity And Equality | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/business/diversity-and-equality/rss",
+                                    "htmlUrl": "https://www.theguardian.com/business/diversity-and-equality"
+                                },
+                                {
+                                    "text": "Prize | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/prize/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/prize"
+                                },
+                                {
+                                    "text": "Everyman | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/everyman/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/everyman"
+                                },
+                                {
+                                    "text": "Australia news | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/australia-news/rss",
+                                    "htmlUrl": "https://www.theguardian.com/australia-news"
+                                },
+                                {
+                                    "text": "Women | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/lifeandstyle/women/rss",
+                                    "htmlUrl": "https://www.theguardian.com/lifeandstyle/women"
+                                },
+                                {
+                                    "text": "Quick | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/quick/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/quick"
+                                },
+                                {
+                                    "text": "Energy | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/environment/energy/rss",
+                                    "htmlUrl": "https://www.theguardian.com/environment/energy"
+                                },
+                                {
+                                    "text": "Quiptic | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/quiptic/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/quiptic"
+                                },
+                                {
+                                    "text": "Cryptic | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/cryptic/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/cryptic"
+                                },
+                                {
+                                    "text": "Asia news | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/world/asia/rss",
+                                    "htmlUrl": "https://www.theguardian.com/world/asia"
+                                },
+                                {
+                                    "text": "Middle East and north Africa | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/world/middleeast/rss",
+                                    "htmlUrl": "https://www.theguardian.com/world/middleeast"
+                                },
+                                {
+                                    "text": "MLS | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/football/mls/rss",
+                                    "htmlUrl": "https://www.theguardian.com/football/mls"
+                                },
+                                {
+                                    "text": "NFL | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/sport/nfl/rss",
+                                    "htmlUrl": "https://www.theguardian.com/sport/nfl"
+                                },
+                                {
+                                    "text": "Love And Sex | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/lifeandstyle/love-and-sex/rss",
+                                    "htmlUrl": "https://www.theguardian.com/lifeandstyle/love-and-sex"
+                                },
+                                {
+                                    "text": "Speedy | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/crosswords/series/speedy/rss",
+                                    "htmlUrl": "https://www.theguardian.com/crosswords/series/speedy"
+                                },
+                                {
+                                    "text": "UK news | The Guardian",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.theguardian.com/uk-news/rss",
+                                    "htmlUrl": "https://www.theguardian.com/uk-news",
+                                    "created": "Mon, 08 Aug 2022 16:08:04 GMT"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "SMH Sports",
+                            "created": "Mon, 08 Aug 2022 16:05:01 GMT",
+                            "subs": [
+                                {
+                                    "text": "NYT > Sports > Soccer",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Soccer.xml",
+                                    "htmlUrl": "https://www.nytimes.com/section/sports/soccer",
+                                    "created": "Thu, 11 Aug 2022 10:08:16 GMT"
+                                },
+                                {
+                                    "text": "NYT > Sports > Baseball",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/Baseball.xml",
+                                    "htmlUrl": "https://www.nytimes.com/section/sports/baseball",
+                                    "created": "Thu, 11 Aug 2022 10:08:17 GMT"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Misc",
+                            "created": "Mon, 08 Aug 2022 16:12:59 GMT",
+                            "subs": [
+                                {
+                                    "text": "9to5Linux",
+                                    "type": "rss",
+                                    "xmlUrl": "https://9to5linux.com/feed",
+                                    "htmlUrl": "https://9to5linux.com/",
+                                    "created": "Mon, 08 Aug 2022 16:14:02 GMT"
+                                },
+                                {
+                                    "text": "showRSS additions feed",
+                                    "type": "rss",
+                                    "xmlUrl": "http://showrss.info/other/shows.rss",
+                                    "htmlUrl": "http://showrss.info",
+                                    "created": "Mon, 08 Aug 2022 16:13:13 GMT"
+                                },
+                                {
+                                    "text": "Throw Out The Manual",
+                                    "type": "rss",
+                                    "xmlUrl": "https://blog.timowens.io/rss",
+                                    "htmlUrl": "https://blog.timowens.io/",
+                                    "created": "Mon, 08 Aug 2022 16:08:05 GMT"
+                                },
+                                {
+                                    "text": "NASA Image of the Day",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss",
+                                    "htmlUrl": "http://www.nasa.gov/",
+                                    "created": "Mon, 08 Aug 2022 16:14:00 GMT"
+                                },
+                                {
+                                    "text": "Stories by Donald G. McNeil Jr. on Medium",
+                                    "type": "rss",
+                                    "xmlUrl": "https://donaldgmcneiljr1954.medium.com/feed",
+                                    "htmlUrl": "https://medium.com/@donaldgmcneiljr1954?source=rss-d58b26425136------2",
+                                    "created": "Mon, 08 Aug 2022 16:13:59 GMT"
+                                },
+                                {
+                                    "text": "West Side Rag",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.westsiderag.com/feed",
+                                    "htmlUrl": "https://www.westsiderag.com/",
+                                    "created": "Mon, 08 Aug 2022 16:13:58 GMT"
+                                },
+                                {
+                                    "text": "Political Wire",
+                                    "type": "rss",
+                                    "xmlUrl": "https://politicalwire.com/feed/",
+                                    "htmlUrl": "https://politicalwire.com/",
+                                    "created": "Mon, 08 Aug 2022 16:13:53 GMT"
+                                },
+                                {
+                                    "text": "Web3 is going just great",
+                                    "type": "rss",
+                                    "xmlUrl": "https://web3isgoinggreat.com/feed.xml",
+                                    "htmlUrl": "https://web3isgoinggreat.com/",
+                                    "created": "Mon, 08 Aug 2022 16:13:50 GMT"
+                                },
+                                {
+                                    "text": "No clues",
+                                    "type": "rss",
+                                    "xmlUrl": "http://clueless.lucky.wtf/rss.xml",
+                                    "htmlUrl": "http://clueless.lucky.wtf/",
+                                    "created": "Mon, 08 Aug 2022 16:13:44 GMT"
+                                },
+                                {
+                                    "text": "Laughing Squid",
+                                    "type": "rss",
+                                    "xmlUrl": "http://laughingsquid.com/feed/",
+                                    "htmlUrl": "https://laughingsquid.com/",
+                                    "created": "Mon, 08 Aug 2022 16:13:38 GMT"
+                                },
+                                {
+                                    "text": "Hacker News",
+                                    "type": "rss",
+                                    "xmlUrl": "https://news.ycombinator.com/rss",
+                                    "htmlUrl": "https://news.ycombinator.com/",
+                                    "created": "Mon, 08 Aug 2022 16:13:37 GMT"
+                                },
+                                {
+                                    "text": "Mediagazer",
+                                    "type": "rss",
+                                    "xmlUrl": "http://mediagazer.com/feed.xml",
+                                    "htmlUrl": "http://mediagazer.com/",
+                                    "created": "Mon, 08 Aug 2022 16:14:44 GMT"
+                                },
+                                {
+                                    "text": "STAT",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.statnews.com/feed/",
+                                    "htmlUrl": "https://www.statnews.com/",
+                                    "created": "Mon, 08 Aug 2022 16:14:50 GMT"
+                                },
+                                {
+                                    "text": "NYT > Top Stories",
+                                    "type": "rss",
+                                    "xmlUrl": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+                                    "htmlUrl": "https://www.nytimes.com/",
+                                    "created": "Mon, 08 Aug 2022 16:12:51 GMT"
+                                },
+                                {
+                                    "text": "memeorandum",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.memeorandum.com/feed.xml",
+                                    "htmlUrl": "http://www.memeorandum.com/",
+                                    "created": "Mon, 08 Aug 2022 16:15:08 GMT"
+                                }
+                            ]
+                        },
+                        {
+                            "text": "Podcasts",
+                            "created": "Mon, 08 Aug 2022 16:05:04 GMT",
+                            "subs": [
+                                {
+                                    "text": "The Brian Lehrer Show",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.wnyc.org/feeds/shows/bl",
+                                    "htmlUrl": "https://www.wnyc.org/shows/bl",
+                                    "created": "Mon, 08 Aug 2022 22:02:03 GMT"
+                                },
+                                {
+                                    "text": "Countdown with Keith Olbermann",
+                                    "type": "rss",
+                                    "xmlUrl": "https://www.omnycontent.com/d/playlist/e73c998e-6e60-432f-8610-ae210140c5b1/4cab918b-b4e7-4a21-8300-aec3011bf3f1/e7682aaf-443f-41d8-945f-aec3011c5127/podcast.rss",
+                                    "created": "Mon, 08 Aug 2022 16:08:48 GMT"
+                                },
+                                {
+                                    "text": "Open Source with Christopher Lydon",
+                                    "type": "rss",
+                                    "xmlUrl": "https://radioopensource.org/feed/",
+                                    "htmlUrl": "https://radioopensource.org/",
+                                    "created": "Mon, 08 Aug 2022 16:09:15 GMT"
+                                },
+                                {
+                                    "text": "Internet History Podcast",
+                                    "type": "rss",
+                                    "xmlUrl": "http://www.internethistorypodcast.com/feed/",
+                                    "htmlUrl": "https://www.internethistorypodcast.com/",
+                                    "created": "Mon, 08 Aug 2022 16:11:57 GMT"
+                                },
+                                {
+                                    "text": "Fresh Air",
+                                    "type": "rss",
+                                    "xmlUrl": "https://feeds.npr.org/381444908/podcast.xml",
+                                    "htmlUrl": "http://www.npr.org/programs/fresh-air/",
+                                    "created": "Mon, 08 Aug 2022 21:59:10 GMT"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "text": "script",
+                    "created": "Tue, 09 Aug 2022 14:45:20 GMT",
+                    "subs": [
+                        {
+                            "text": "//this code runs at startup",
+                            "created": "Tue, 09 Aug 2022 14:45:26 GMT"
+                        },
+                        {
+                            "text": "console.log (\"This code runs at startup, whether you want it to or not.\")",
+                            "created": "Tue, 09 Aug 2022 15:45:14 GMT"
+                        }
+                    ]
+                },
+                {
+                    "text": "style",
+                    "created": "Tue, 09 Aug 2022 14:45:34 GMT",
+                    "subs": [
+                        {
+                            "text": "/* this CSS appears after all other styles */",
+                            "created": "Tue, 09 Aug 2022 14:45:38 GMT"
+                        },
+                        {
+                            "text": "body {",
+                            "created": "Tue, 09 Aug 2022 15:01:25 GMT",
+                            "subs": [
+                                {
+                                    "text": "background-color: white;",
+                                    "created": "Tue, 09 Aug 2022 15:01:29 GMT"
+                                },
+                                {
+                                    "text": "}",
+                                    "created": "Tue, 09 Aug 2022 15:01:33 GMT"
+                                }
+                            ]
+                        },
+                        {
+                            "text": ".divPageBody {",
+                            "created": "Tue, 09 Aug 2022 15:27:54 GMT",
+                            "subs": [
+                                {
+                                    "text": "margin-top: 30px;",
+                                    "created": "Tue, 09 Aug 2022 15:28:00 GMT"
+                                },
+                                {
+                                    "text": "}",
+                                    "created": "Tue, 09 Aug 2022 15:28:12 GMT"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+};
+			
+			</script>
+		
+		</head>
+	<body>
+		<div class="divPageBody">
+			<div class="divSignedOn" id="idSignedOn">
+				<div class="divRiverPageTop">
+					<center>
+						<table cellpadding=4 border=0>
+							<tr>
+								<td>
+									<div class="divProductLogo" id="idProductLogo">
+										<img src="https://fav.farm/🤷‍♂️">
+										</div>
+									</td>
+								<td>
+									<div class="divNameAndTagline">
+										<div class="divProductTitle" id="idProductTitle">SNN (Scott's News Network)</div></a>
+										<div class="divProductTagline" id="idProductTagline">All the news that's fit to feed</div>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</center>
+					</div>
+				<div class="divRiverTabs" id="idRiverTabs">
+					</div>
+				<div class="divRiverInTab" id="idRiverInTab">
+					</div>
+				</div>
+			</div>
+		<script>
+			$(document).ready (function () {
+				startup ();
+				});
+			</script>
+		</body>
+	</html>
